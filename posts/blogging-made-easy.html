@@ -24,11 +24,15 @@ article: http://ogp.me/ns/article#
 
     
     <meta name="author" content="Ramesh Sampath">
-        <meta name="og:title" content="Blogging with IPython Notebooks">
-    <meta name="og:url" content="http://www.sampathweb.com/posts/blogging-made-easy.html">
-    <meta name="og:description" content="Blogging with IPython Notebooks">
-    <meta name="og:site_name" content="Ramesh Sampath">
-    <meta name="og:type" content="article">
+        <meta property="og:site_name" content="Ramesh Sampath">
+    <meta property="og:title" content="Blogging with IPython Notebooks">
+    <meta property="og:url" content="http://www.sampathweb.com/posts/blogging-made-easy.html">
+    <meta property="og:description" content="Blogging with IPython Notebooks">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2014-10-01T15:08:31-07:00">
+           <meta property="article:tag" content="nikola">
+           <meta property="article:tag" content="python">
+           <meta property="article:tag" content="setup">
 
     
     
@@ -79,13 +83,13 @@ article: http://ogp.me/ns/article#
 <h5>Setting up local system</h5>
 <p>Change to the directory you want to create the blog in local system.
 First, let's setup a new virtual environment for blog post and activate the virutal environment.  I used Python 3 / pyvenv for this blog.  Alternatively, you can use conda to setup your environment.</p>
-<pre class="code literal-block"><span class="n">pyvenv</span> <span class="n">env3</span>
-<span class="n">source</span> <span class="n">env3</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
+<pre class="code literal-block">pyvenv env3
+source env3/bin/activate
 </pre>
 
 
 <p>Now that the virtual environment is active, Let's install nikola (static web page generator), requests, markdown and IPython libraries</p>
-<pre class="code literal-block"><span class="n">pip</span> <span class="n">install</span> <span class="n">nikola</span> <span class="n">requests</span> <span class="n">markdown</span> <span class="n">webassets</span> <span class="n">ipython</span><span class="p">[</span><span class="n">notebook</span><span class="p">]</span>
+<pre class="code literal-block">pip install nikola requests markdown webassets ipython[notebook]
 </pre>
 
 
@@ -108,26 +112,26 @@ First, let's setup a new virtual environment for blog post and activate the viru
 <ul>
 <li>Update <code>conf.py</code> to add Markdown and IPython as valid blog formats.</li>
 </ul>
-<pre class="code literal-block"><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s">"posts/*.md"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"posts/*.ipynb"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"posts/*.txt"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"posts/*.rst"</span><span class="p">,</span> <span class="s">"posts"</span><span class="p">,</span> <span class="s">"post.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s">"stories/*.md"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"stories/*.ipynb"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"stories/*.txt"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">"stories/*.rst"</span><span class="p">,</span> <span class="s">"stories"</span><span class="p">,</span> <span class="s">"story.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
+<pre class="code literal-block">POSTS = (
+    ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post.tmpl"),
+    ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
+)
+PAGES = (
+    ("stories/*.md", "stories", "story.tmpl"),
+    ("stories/*.ipynb", "stories", "story.tmpl"),
+    ("stories/*.txt", "stories", "story.tmpl"),
+    ("stories/*.rst", "stories", "story.tmpl"),
+)
 </pre>
 
 
 <ul>
 <li>Set Teaser to True to show only partial content on Index Page with Read More link -</li>
 </ul>
-<pre class="code literal-block"><span class="cp"># Show only teasers in the index pages? Defaults to False.</span>
-<span class="n">INDEX_TEASERS</span> <span class="o">=</span> <span class="n">True</span>
+<pre class="code literal-block"># Show only teasers in the index pages? Defaults to False.
+INDEX_TEASERS = True
 </pre>
 
 
@@ -155,8 +159,8 @@ First, let's setup a new virtual environment for blog post and activate the viru
 <h4>Installing Themes</h4>
 <p>To install / checkout themes that are bundled with nikola,  <code>nikola install_theme -l</code>.  For this blog, I used zen-ipython theme by Damien.  To do that, run <code>nikola install_theme zen-ipython</code> from the main folder of the blog.</p>
 <p>Verify that <code>conf.py</code> is updated with the theme -</p>
-<pre class="code literal-block"><span class="cp"># Name of the theme to use.</span>
-<span class="n">THEME</span> <span class="o">=</span> <span class="s">"zen-ipython"</span>
+<pre class="code literal-block"># Name of the theme to use.
+THEME = "zen-ipython"
 </pre>
 
 
@@ -175,12 +179,12 @@ First, let's setup a new virtual environment for blog post and activate the viru
 </li>
 </ul>
 <p>I have following in <code>conf.py</code> to push to master and publish the output html to gh-pages.  All I do is <code>nikola deploy</code> and it's done for me.  Note that you still need to do <code>nikola build</code> to create the output html files before running deploy command.</p>
-<pre class="code literal-block"><span class="n">DEPLOY_COMMANDS</span> <span class="o">=</span> <span class="p">[</span><span class="s">"git add ."</span><span class="p">,</span>
-                   <span class="s">"git commit -am 'Update'"</span><span class="p">,</span>
-                   <span class="s">"git push origin master"</span><span class="p">,</span>
-                   <span class="s">"git subtree split --prefix output -b gh-pages"</span><span class="p">,</span>
-                   <span class="s">"git push -f origin gh-pages:gh-pages"</span><span class="p">,</span>
-                   <span class="s">"git branch -D gh-pages"</span><span class="p">]</span>
+<pre class="code literal-block">DEPLOY_COMMANDS = ["git add .",
+                   "git commit -am 'Update'",
+                   "git push origin master",
+                   "git subtree split --prefix output -b gh-pages",
+                   "git push -f origin gh-pages:gh-pages",
+                   "git branch -D gh-pages"]
 </pre>
 
 
@@ -189,7 +193,12 @@ First, let's setup a new virtual environment for blog post and activate the viru
 </ul>
 </div>
         </div>
-        
+                <ul class="pager">
+            <li class="next">
+                <a href="exploring-titanic-dataset-with-pandas.html" rel="next" title="Exploring Titanic Dataset with Pandas">Next post</a>
+            </li>
+        </ul>
+
                             <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="sampathweb-blog",
@@ -197,7 +206,7 @@ First, let's setup a new virtual environment for blog post and activate the viru
         disqus_title="Blogging with IPython Notebooks",
         disqus_identifier="cache/posts/blogging-made-easy.html",
         disqus_config = function () {
-            this.language = "";
+            this.language = "en";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;
