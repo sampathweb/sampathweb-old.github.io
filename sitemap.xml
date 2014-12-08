@@ -6,7 +6,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://www.sampathweb.com/2014/index.html</loc>
-  <lastmod>2014-12-06</lastmod>
+  <lastmod>2014-12-07</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/archive.html</loc>
@@ -34,7 +34,7 @@
  </url>
  <url>
   <loc>http://www.sampathweb.com/index.html</loc>
-  <lastmod>2014-12-06</lastmod>
+  <lastmod>2014-12-07</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/listings/index.html</loc>
@@ -42,7 +42,7 @@
  </url>
  <url>
   <loc>http://www.sampathweb.com/posts/blogging-made-easy.html</loc>
-  <lastmod>2014-12-06</lastmod>
+  <lastmod>2014-12-07</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/posts/exploring-titanic-dataset-with-pandas.html</loc>
