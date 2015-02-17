@@ -6,43 +6,43 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>http://www.sampathweb.com/2014/index.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/archive.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/categories/index.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/categories/nikola.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/categories/python.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/categories/setup.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/galleries/index.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/index.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/listings/index.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/posts/blogging-made-easy.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
  <url>
   <loc>http://www.sampathweb.com/posts/exploring-titanic-dataset-with-pandas.html</loc>
@@ -50,6 +50,6 @@
  </url>
  <url>
   <loc>http://www.sampathweb.com/stories/ramesh-sampath.html</loc>
-  <lastmod>2015-01-02</lastmod>
+  <lastmod>2015-02-16</lastmod>
  </url>
 </urlset>
