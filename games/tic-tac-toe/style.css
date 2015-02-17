@@ -1,0 +1,48 @@
+body {
+    max-width: 36em;
+    width: 90%;
+    font-size: 1.125em;
+    font-style: "Georgia", "Times New Roman", "Times", serif;
+    line-height: 1.5;
+    margin: 4em auto;
+    text-align: center;
+}
+h1, h2 {
+
+    font-weight: bold;
+    line-height: 1;
+    color: #b7a107;
+    padding: 0;
+}
+
+h1 {
+    font-size: 5em;
+}
+h2 {
+    font-size: 3em;
+}
+
+button.btn {
+    height: 3em;
+    width: 8em;
+    background-color: green;
+    font-size: 2em;
+    color: #ffffff;
+
+}
+
+ul.row li button {
+    overflow: auto;
+    height: 5em;
+    width: 5em;
+}
+
+ul.row li  {
+    display: inline;
+}
+
+button span {
+    font-size: 3em;
+    margin: auto auto;
+    padding: 0;
+}
