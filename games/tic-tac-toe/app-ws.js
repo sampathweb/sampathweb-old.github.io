@@ -9,7 +9,7 @@ $(function() {
     game_result: '',
     ws: null,  // Will contain websocket connection
     ws_url_local: 'ws://' + 'localhost:8001' + '/tic-tac-toe/',
-    ws_url: 'ws://' + '204.236.190.161' + '/tic-tac-toe/',
+    ws_url: 'ws://' + 'websockets-test-ha-1776378039.us-west-1.elb.amazonaws.com' + '/tic-tac-toe/',
 
     reset_board: function() {
       $("ul.row button").each( function() {
