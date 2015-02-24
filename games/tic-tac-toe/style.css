@@ -16,19 +16,23 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 5em;
-}
-h2 {
     font-size: 3em;
 }
-
-button.btn {
-    height: 3em;
-    width: 8em;
-    background-color: green;
+h2 {
     font-size: 2em;
-    color: #ffffff;
+}
 
+button.action {
+    height: 2em;
+    width: 10em;
+    background-color: green;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+button.action[disabled=disabled], button.action:disabled {
+    background-color: gray;
+    color: #c0c0c0;
 }
 
 ul.row li button {
