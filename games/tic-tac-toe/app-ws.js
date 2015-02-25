@@ -1,4 +1,8 @@
 $(function() {
+  var isUndefined = function isUndefined(value) {
+      return typeof value === 'undefined';
+  };
+
   var APP = {
     game_choices: ["0,0", "0,1", "0,2", "1,0", "1,1", "1,2", "2,0", "2,1", "2,2"],
     handle: "",
@@ -90,6 +94,15 @@ $(function() {
 
     recvd_msg: function(data) {
       console.log(data);
+      if (!isUndefined(data.handle)) {
+        $('.handle').text(data.handle);
+      }
+      if (!isUndefined(data.hostname)) {
+        $('.hostname').text(data.hostname);
+      }
+      if (!isUndefined(data.paired_handle)) {
+        $('.paired_handle').text(data.paired_handle);
+      }
       if (data.action == 'connect') {
         APP.handle = data.handle;
       } else if (data.action == 'wait-pair') {
