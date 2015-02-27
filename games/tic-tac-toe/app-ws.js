@@ -93,57 +93,63 @@ $(function() {
     },
 
     recvd_msg: function(data) {
-      console.log(data);
-      if (!isUndefined(data.handle)) {
-        $('.handle').text(data.handle);
-      }
-      if (!isUndefined(data.hostname)) {
-        $('.hostname').text(data.hostname);
-      }
-      if (!isUndefined(data.paired_handle)) {
-        $('.paired_handle').text(data.paired_handle);
-      }
-      if (data.action == 'connect') {
-        APP.handle = data.handle;
-      } else if (data.action == 'wait-pair') {
-        APP.my_move = false;  // Waiting for pairing
-        APP.wait_message();
-      } else if (data.action == 'game-start') {
-        // Game Started
-        APP.game_started = true;
-        APP.activate_board();
-        $('.result').text('Game Started!');
-        APP.my_move = (data.next_handle == APP.handle) ? true : false;
-        APP.move_message();
-      } else if (data.action == 'player-move') {
-        // Record the move
-        if (data.handle != APP.handle) {
-          sel_item = data.move;
-          APP.player_b.push(sel_item);
-          APP.game_choices.splice(APP.game_choices.indexOf(sel_item), 1);
-          button = $('button[value="'+sel_item+'"]');
-          if (button) {
-            content = button.find(".content");
-            content.text('O');
-            button.prop("disabled", true);
-            // button.off("click");
+      console.log('Received Msg:', data, 'Action: ', data.action);
+      switch (data.action) {
+        case 'connect':
+          APP.handle = data.handle;
+          $('.handle').text(data.handle);
+          $('.hostname').text(data.hostname);
+          break;
+        case 'wait-pair':
+          APP.my_move = false;  // Waiting for pairing
+          APP.wait_message();
+          break;
+        case 'paired':
+          $('.pair').text(data.pair);
+        case 'game-start':
+          // Game Started
+          APP.game_started = true;
+          APP.activate_board();
+          $('.result').text('Game Started!');
+          APP.my_move = (data.next_handle == APP.handle) ? true : false;
+          APP.move_message();
+          break;
+        case 'valid-moves':
+          console.log('valid-moves', data)
+          APP.my_move = (data.next_handle == APP.handle) ? true : false;
+          APP.move_message();
+          break;
+        case 'player-move':
+          // Record the move
+          if (data.handle != APP.handle) {
+            sel_item = data.move;
+            APP.player_b.push(sel_item);
+            APP.game_choices.splice(APP.game_choices.indexOf(sel_item), 1);
+            button = $('button[value="'+sel_item+'"]');
+            if (button) {
+              content = button.find(".content");
+              content.text('O');
+              button.prop("disabled", true);
+              // button.off("click");
+            }
           }
-        }
-        APP.my_move = (data.next_handle == APP.handle) ? true : false;
-        APP.move_message();
-      } else if (data.action == 'game-end') {
-        if (data.win_handle == APP.handle) {
-          console.log("You Won");
-          $('.result').text('You Won. Looking like a Pro!');
-        } else if (data.win_handle == "") {
-          console.log("Game Draw");
-          $('.result').text('Game Draw. Challenge again?');
-        } else {
-          console.log("You Lost");
-          $('.result').text('You Lost. Better Luck Next Time!');
-        }
-        APP.game_started = false;
-        $("button.action").prop("disabled", false);
+          break;
+        case 'game-end':
+          if (data.win_handle == APP.handle) {
+            console.log("You Won");
+            $('.result').text('You Won. Looking like a Pro!');
+          } else if (data.win_handle == "") {
+            console.log("Game Draw");
+            $('.result').text('Game Draw. Challenge again?');
+          } else {
+            console.log("You Lost");
+            $('.result').text('You Lost. Better Luck Next Time!');
+          }
+          APP.game_started = false;
+          $("button.action").prop("disabled", false);
+          break;
+        default:
+          console.log(data.action, 'not found');
       }
     },
 
