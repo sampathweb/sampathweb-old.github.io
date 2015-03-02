@@ -160,6 +160,8 @@ $(function() {
 
     ws_close: function() {
       APP.ws.close();
+      // Sleep for a second and re-connect again
+      setTimeout(initalize_game, 1000);
     },
 
     ws_error: function(message) {
