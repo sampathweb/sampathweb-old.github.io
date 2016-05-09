@@ -1,7 +1,7 @@
 <!--
 .. title: Blogging with IPython Notebooks
 .. slug: blogging-made-easy
-.. date: 2014-10-01 15:08:31 UTC-07:00
+.. date: 2016-01-01 15:08:31 UTC-07:00
 .. tags: nikola, python, setup
 .. link:
 .. description: Blogging with IPython Notebooks
