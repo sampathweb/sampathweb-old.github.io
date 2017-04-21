@@ -25,6 +25,7 @@ echo "export PATH=\"$HOME/miniconda3/bin:\$PATH\"" >> ~/.bashrc
 export PATH="$HOME/miniconda3/bin:$PATH"
 conda install -y bcolz
 conda upgrade -y --all
+conda install -y numpy pandas scikit-learn matplotlib requests jupyter seaborn
 
 # install cudnn libraries
 wget "http://platform.ai/files/cudnn.tgz" -O "cudnn.tgz"
